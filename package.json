@@ -18,9 +18,9 @@
     "cap:ios": "npm run build && npx cap sync ios && npx cap open ios"
   },
   "optionalDependencies": {
+    "@capacitor/android": "^7.0.0",
     "@capacitor/cli": "^7.0.0",
     "@capacitor/core": "^7.0.0",
-    "@capacitor/android": "^7.0.0",
     "@capacitor/ios": "^7.0.0"
   },
   "devDependencies": {
@@ -36,6 +36,7 @@
   },
   "dependencies": {
     "bitecs": "^0.3.40",
-    "phaser": "^3.90.0"
+    "phaser": "^3.90.0",
+    "zod": "^4.5.4"
   }
 }
