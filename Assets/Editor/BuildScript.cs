@@ -13,7 +13,7 @@ namespace IL6.EditorBuild
     {
         private const string OutputDirWebGL = "Build/WebGL";
         private const string OutputDirWin = "Build/Windows";
-        private const string PortableExeName = "InisLand_v0.3.0_portable.exe";
+        private const string PortableExeName = "InisLand_v0.4.0_portable.exe";
 
         [MenuItem("IL6/Build/WebGL")]
         public static void BuildWebGL()

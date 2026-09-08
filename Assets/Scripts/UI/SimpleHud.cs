@@ -960,6 +960,7 @@ namespace IL6
         // RESOURCE BAR (좌상단 수평 스트립): Wood / Stone / Meat / Food
         // ====================================================================
         private GUIStyle _resStyle;
+        private readonly Dictionary<ResourceKind, Texture2D> _resourceIcons = new Dictionary<ResourceKind, Texture2D>();
 
         private void DrawResourceBar()
         {
@@ -980,9 +981,9 @@ namespace IL6
             UiTheme.Rect(panel, new Color(0.05f, 0.07f, 0.12f, 0.90f));
             UiTheme.Rect(new Rect(panel.x - 1, panel.y - 1, panel.width + 2, panel.height + 2), UiTheme.PanelBorderDim);
 
-            // 4 자원 수평 배치
+            // 4 자원 수평 배치 — imagegen 아이콘 + 숫자
             ResourceKind[] kinds  = { ResourceKind.Wood, ResourceKind.Stone, ResourceKind.Meat, ResourceKind.Food };
-            string[]        emojis = { "🪵", "🪨", "🥩", "🌾" };
+            string[] iconNames = { "wood", "stone", "food", "food" };
             int itemW = W / 4;
             for (int i = 0; i < kinds.Length; i++)
             {
@@ -991,13 +992,17 @@ namespace IL6
                 int cap = session.Resources.GetCap(k);
                 int x = (int)panel.x + i * itemW + 6;
 
-                // 컬러 점
-                UiTheme.Icon(new Rect(x, (int)panel.y + 9, 14, 14), UiTheme.ResColor(k));
+                if (!_resourceIcons.TryGetValue(k, out var icon) || icon == null)
+                {
+                    icon = Resources.Load<Texture2D>($"UIIcons/{iconNames[i]}");
+                    _resourceIcons[k] = icon;
+                }
+                if (icon != null) GUI.DrawTexture(new Rect(x, (int)panel.y + 4, 20, 20), icon, ScaleMode.ScaleToFit, true);
 
                 var oldC = GUI.contentColor;
                 GUI.contentColor = cur >= cap ? UiTheme.TextDanger : UiTheme.TextCream;
-                GUI.Label(new Rect(x + 18, (int)panel.y + 6, itemW - 22, 22),
-                    $"{emojis[i]} {cur}", _resStyle);
+                GUI.Label(new Rect(x + 24, (int)panel.y + 6, itemW - 28, 22),
+                    $"{cur}", _resStyle);
                 GUI.contentColor = oldC;
 
                 // 구분선 (마지막 제외)
