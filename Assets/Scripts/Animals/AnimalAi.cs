@@ -1,4 +1,4 @@
-using UnityEngine;
+﻿using UnityEngine;
 
 namespace IL6
 {
@@ -20,6 +20,9 @@ namespace IL6
         protected Transform _player;
         private float _regenTimer;
 
+        protected Animator _animator;
+
+
         protected virtual void Awake()
         {
             _rb = GetComponent<Rigidbody2D>();
@@ -29,6 +32,8 @@ namespace IL6
                 _rb.freezeRotation = true;
             }
             _sr = GetComponent<SpriteRenderer>();
+
+            _animator = GetComponent<Animator>();
         }
 
         protected virtual void Start()
@@ -80,5 +85,27 @@ namespace IL6
 
         /// <summary>서브클래스 별 행동 — _rb.velocity 세팅하면 됨.</summary>
         protected abstract void DoBehavior();
+
+        // flip 함수(애니메이션 좌/우 반전)
+        protected void UpdateFacing(Vector2 direction)
+        {
+            if (_sr == null) return;
+
+            if (direction.x < -0.01f)
+                _sr.flipX = true;
+            else if (direction.x > 0.01f)
+                _sr.flipX = false;
+        }
+
+        /*
+         늑대/멧돼지: 타겟 없음(Idle) -> 타겟 발견(Chase) -> 공격 범위 내 진입(PrepareAttack) -> 전조 시간 끝(Charge) -> 돌진 끝(Recover) -> 끝(Chase)
+         */
+
+        // 애니메이션 상태 전환
+        protected void SetAnimatorState(int state)
+        {
+            if (_animator != null)
+                _animator.SetInteger("state", state);
+        }
     }
 }

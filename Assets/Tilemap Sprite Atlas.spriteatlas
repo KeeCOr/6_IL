@@ -43,7 +43,6 @@ SpriteAtlas:
     - 7078e77289b54db589d8c55fa9d66876: 21300000
     - 9255099218b74cffbc89f2e9b87c0077: 21300000
     - 773afd92b7644b8ba7cc6d7ce8a9f568: 21300000
-    - 6c5f0173a1e544348b4d8c9af2d4d81f: 21300000
     - 38be2d832439a314bbfbf0a09c2424a8: -1261802262
     - 38be2d832439a314bbfbf0a09c2424a8: -1797241713
     - 38be2d832439a314bbfbf0a09c2424a8: 307499910
@@ -81,6 +80,7 @@ SpriteAtlas:
     - 9839bbf54715ced4d86727fbce99dfbc: -1043967825
     - 9839bbf54715ced4d86727fbce99dfbc: 840978210
     - 9839bbf54715ced4d86727fbce99dfbc: -1673064248
+    - 510cb4967f8a9ed4e985c9feeb19eb25: 21300000
     - b62aa6c7ddc8423aa773c1832b111070: 21300000
     - 958291a8e2b04c329382887ab49c207e: 21300000
     - e3f8a3b8d6ba37545be91e5b7ee61df7: 21300000
@@ -100,7 +100,6 @@ SpriteAtlas:
   - {fileID: 21300000, guid: 7078e77289b54db589d8c55fa9d66876, type: 3}
   - {fileID: 21300000, guid: 9255099218b74cffbc89f2e9b87c0077, type: 3}
   - {fileID: 21300000, guid: 773afd92b7644b8ba7cc6d7ce8a9f568, type: 3}
-  - {fileID: 21300000, guid: 6c5f0173a1e544348b4d8c9af2d4d81f, type: 3}
   - {fileID: -1261802262, guid: 38be2d832439a314bbfbf0a09c2424a8, type: 3}
   - {fileID: -1797241713, guid: 38be2d832439a314bbfbf0a09c2424a8, type: 3}
   - {fileID: 307499910, guid: 38be2d832439a314bbfbf0a09c2424a8, type: 3}
@@ -138,6 +137,7 @@ SpriteAtlas:
   - {fileID: -1043967825, guid: 9839bbf54715ced4d86727fbce99dfbc, type: 3}
   - {fileID: 840978210, guid: 9839bbf54715ced4d86727fbce99dfbc, type: 3}
   - {fileID: -1673064248, guid: 9839bbf54715ced4d86727fbce99dfbc, type: 3}
+  - {fileID: 21300000, guid: 510cb4967f8a9ed4e985c9feeb19eb25, type: 3}
   - {fileID: 21300000, guid: b62aa6c7ddc8423aa773c1832b111070, type: 3}
   - {fileID: 21300000, guid: 958291a8e2b04c329382887ab49c207e, type: 3}
   - {fileID: 21300000, guid: e3f8a3b8d6ba37545be91e5b7ee61df7, type: 3}
@@ -156,7 +156,6 @@ SpriteAtlas:
   - small_rocks
   - logs
   - fence_vertical
-  - cabin
   - gate_vertical_open
   - gate_closed
   - gate_vertical_closed
@@ -194,6 +193,7 @@ SpriteAtlas:
   - bonFireSmoke_0
   - bonFireSmoke_1
   - bonFireSmoke_8
+  - cabin
   - pine_tree
   - stump
   - snowPineTree
